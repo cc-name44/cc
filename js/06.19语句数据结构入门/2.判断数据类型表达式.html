@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = ''
+        // 需求
+        // 1.如何保证一个变量一定是number
+            typeof data === 'number'
+            console.log(data.constructor === Number)
+        // 2.如何保证一个变量一定是string
+            console.log(data.constructor === String)
+        // 3.如何保证一个变量一定是boolean
+            console.log(data.constructor === Boolean)
+        // 4.如何保证一个变量一定是undefined
+            typeof data === 'undefined'
+
+
+        // 5.如何保证一个变量一定是null
+            console.log(data === null)
+
+
+        // 6.如何保证一个变量一定是数组
+            console.log(data.constructor === Array)
+        // 7.如何保证一个变量一定是对象
+           
+            console.log(data.constructor === Object)
+        // 8.如何保证一个变量一定是函数
+            data = function(){}
+            console.log(data.constructor === Function)
+
+        typeof data === 'number' || typeof data === 'string' 
+
+        // 如何让 变量 是数组或对象
+        data instanceof Object
+        data.constructor ==Array||data.constructor == Object
+
+        //需求 a不为number 
+        var a
+        var b
+        var c
+        var res = typeof a != 'number' && b.constructor === Array || typeof c === 'string'
+
+    </script>
+</body>
+</html>

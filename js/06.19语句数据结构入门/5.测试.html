@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.接受用户输入的内容
+        //2.如果用户输入内容  大于4000 顶呱呱
+                        //   3000-4000 自然人
+                        //   2000-3000 憨憨
+                        //   小于2000  铁头娃
+        var str = prompt('测试')
+        var res = str.charCodeAt();
+        if(res>4000){
+            alert('顶呱呱');
+        }
+        else if(3000<res<4000){
+            alert('自然人');
+        }
+        else if(2000<res<3000){
+            alert('憨憨');
+        }
+        else{
+            alert(' 铁头娃');
+        }
+    </script>
+</body>
+</html>

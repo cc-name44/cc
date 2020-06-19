@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ['1', '2', '3']
+        // console.log(arr[0])
+
+        // for(var i = 0; i<arr.length;i++){
+        //     console.log(arr[i])
+        // }
+
+        var students = [
+            { name: 'a', age: 17 },
+            { name: 'b', age: 18 },
+            { name: 'c', age: 19 },
+            { name: 'd', age: 20 },
+            { name: 'e', age: 21 },
+        ]
+
+        // console.log('姓名：   ',students[0].name,'年龄：   ',students[0].age)
+        // for(var i=0;i<students.length;i++){
+        //     console.log('姓名：   ',students[i].name,'年龄：   ',students[i].age)
+        // }
+
+        var teacher = [
+            { name: 'a', dec: '1', age: 17 },
+            { name: 'b', dec: '2', age: 18 },
+            { name: 'c', dec: '3', age: 19 },
+            { name: 'd', dec: '4', age: 20 },
+        ]
+        // for(var i=0;i<teacher.length;i++){
+        // console.log('姓名：   ',teacher[i].name,'DEC：   ',teacher[i].dec)
+        // }
+        for (var i = 0; i < teacher.length; i++) {
+            if (teacher[i].age >= 18) {
+                // document.write('姓名：'+teacher[i].name + 'DEC：' + teacher[i].dec)
+                document.write(`<h1>姓名：${teacher[i].name}，描述：${teacher[i].dec}</h1>`);
+            }
+            if (teacher[i].age < 18) {
+                console.log('姓名：', teacher[i].name, 'DEC：', teacher[i].dec);
+                
+            }
+
+        }
+
+
+        // 页面中显示 年龄大于等于18岁的老师 ，终端输出所有老师
+
+    </script>
+</body>
+
+</html>
