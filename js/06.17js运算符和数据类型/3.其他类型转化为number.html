@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数据类型之间是可以相互转化的  显示  隐士
+        //bool型   转为   number
+
+        //显示转换  Number() parseInt() parself()
+        //api 接受什么参数  api 的作用是什么
+
+        var x = 0.1;
+        var y = 0.2;
+        //注意：不要测试两个浮点数的  运算结果
+        console.log(x + y)
+        console.log(x + y == 0.3);
+        //不论是二进制还是其他进制数  最后显示的都是十进制
+        console.log(0xf)
+
+        //Number() 作用：将其他类型的数据转化为数值型，并返回转化结果
+        //参数为js 数据   不传参默认返回 0
+        var res = Number('csds');
+        console.log(res);
+        console.log(Number())
+        
+
+        //NaN  其他数据转化数值型 ：没有匹配数组 那么就是NaN
+        //1.任何数与NaN  算术运算都是 NaN
+        //2.任何数与其相比较都是  false
+        //3.NaN 不等于 NaN
+        //注意：数据转化为  NaN   后的运算情况
+
+        //字符串转 number
+        //‘’---- 0  非空非数字字符  ---NaN
+        //纯数字字符   -----数字
+        //进制字符  ---------最终输出十进制
+
+
+        //bool 转number
+        //true 1
+        //false 0
+
+        //undefined  NaN
+        //null   0
+
+        //数组转数字
+        //空数组  0
+        //非空数组 NaN
+
+        //对象转数值 NaN
+    </script>
+</body>
+</html>

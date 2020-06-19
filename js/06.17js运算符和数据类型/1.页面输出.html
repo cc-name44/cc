@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        页面输出：做调试bug  程序 或者推理业务  在哪里出现问题那么就哪里输出
+        
+     -->
+     <script>
+         //字符串  变量
+         //传入任意的js  数据类型  变量
+         //查看的是  某一个变量在执行到某一行的时候  赋值的内容是什么
+         //==========>日志以下的文件  用的是什么值？
+         //注意： 打印日志  不会阻断下面代码的执行 ，同步代码（快）
+         console.log('=============');
+         console.log(true);
+         console.log(['name',12]);
+         console.log({name:'aa',age:12});
+         
+         //alert 是弹框  可以阻断下面的代码的执行  类似【打断点】
+        //  var _name = 'ccccc'
+        //  alert(_name)
+         console.log('------------------------------')
+         console.log('==============================')
+         console.log('------------------------------')
+         console.log('++++++++++++++++++++++++++++++')
+         console.log('******************************')
+         console.log('------------------------------')
+         console.log('##############################')
+
+         //需求  既要  看到 具体内容   又要阻断下面代码的执行
+         //------->打断调试   watch 监听某一个变量  是否声明  以及赋值的过程
+         //------->没声明  no available   有声明  初始  undefined  值的变化
+         console.log(cc)
+         var cc = 'ctwo'
+         console.log(true + true)
+         console.log( (true + false)  && (2>1))
+
+         //字符串的长度不能决定字符串的大小
+         //
+         console.log('abc'>'aabc')
+         console.log('gukun'>'liuyucai')
+         var a = '安';
+         console.log(a.charCodeAt())
+     </script>
+</body>
+</html>
