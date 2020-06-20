@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组中 放的是相同的数据类型 ；要么都是数组 对象或者字符串
+      // 对象中存放的是不同的数据类型结构
+      //  每一个数组都是有意义的；即要让 数据结构符合html 结构；又要让 意义相符合
+
+      // 锻炼：根据页面结构 分析 你需要的数据结构
+
+      // 在js 中轮播图数据存在方式
+      var swipers = [
+        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg",
+        "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3892521478,1695688217&fm=26&gp=0.jpg",
+        "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574127451,3300961108&fm=26&gp=0.jpg",
+        "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574127451,3300961108&fm=26&gp=0.jpg",
+      ];
+
+      // 导航tab
+      var nav = [
+        {
+          title: "会员中心",
+          icon: "iconFont",
+        },
+        {
+          title: "中草专辑",
+          icon: "iconFont1",
+        },
+        {
+          title: "精选品牌",
+          icon: "iconFont2",
+        },
+        {
+          title: "领券中心",
+          icon: "iconFont3",
+        },
+        {
+          title: "签到",
+          icon: "iconFont5",
+        },
+      ];
+
+      var timeShop = {
+        title: "现实抢购",
+        time: "00:00",
+        dec: "每天10天开始",
+        productList: [
+          { imgsrc: "", price: "99元", delPrice: "100元" },
+          { imgsrc: "", price: "99元", delPrice: "100元" },
+          { imgsrc: "", price: "99元", delPrice: "100元" },
+          { imgsrc: "", price: "99元", delPrice: "100元" },
+        ],
+      };
+
+      var classes = [
+        {
+          a: "精选",
+          b: "为你推荐",
+        },
+        {
+          a: "进口",
+          b: "为你推荐",
+        },
+        {
+          a: "优惠",
+          b: "为你推荐",
+        },
+        {
+          a: "新品",
+          b: "为你推荐",
+        },
+      ];
+
+      var header = {
+        swiper: [
+          "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg",
+          "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3892521478,1695688217&fm=26&gp=0.jpg",
+          "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574127451,3300961108&fm=26&gp=0.jpg",
+          "https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574127451,3300961108&fm=26&gp=0.jpg",
+        ],
+        nav: [
+          {
+            title: "会员中心",
+            icon: "iconFont",
+          },
+          {
+            title: "中草专辑",
+            icon: "iconFont1",
+          },
+          {
+            title: "精选品牌",
+            icon: "iconFont2",
+          },
+          {
+            title: "领券中心",
+            icon: "iconFont3",
+          },
+          {
+            title: "签到",
+            icon: "iconFont5",
+          },
+        ],
+      };
+
+    //   分类页面
+       var product = [
+        {
+          title: "热门推荐",
+          list: {
+            imgSrc: "",
+            list: [
+              {
+                title: "热门精选",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+              {
+                title: "服配",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+              {
+                title: "珠宝",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          title: "家用电器",
+          list: {
+            imgSrc: "1.pne=g",
+            list: [
+              {
+                title: "热门精选",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+              {
+                title: "服配",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+              {
+                title: "珠宝",
+                list: [
+                  { name: "ddd1", imgsrc: "" },
+                  { name: "ddd1", imgsrc: "" },
+                ],
+              },
+            ],
+          },
+        },
+      ];
+    </script>
+  </body>
+</html>

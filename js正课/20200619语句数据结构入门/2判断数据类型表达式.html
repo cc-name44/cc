@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var data = "";
+
+      // 完成需求  res = true 满足需求 false 不满足需求
+      // 如何 保证变量一定是number
+      var res = typeof data === "number";
+      var re = data.construtor === Number;
+      // 如何 保证变量一定是string
+      var res1 = typeof data === "string";
+      var re1 = data.construtor === String;
+      // 如何 保证变量一定是boolean
+      var res2 = typeof data === "boolean";
+      var re2 = data.construtor === Boolean;
+      // 如何 保证变量一定是undefined
+      var res3 = typeof data === "undefined";
+      // 如何 保证变量一定是null
+      var res4 = data === null;
+      // 如何 保证变量一定是数组
+      var res5 = Array.isArray(data);
+      var res6 = data.construtor === Array;
+      var res7 = data instanceof Array;
+      // 如何 保证变量一定是对象
+      var res8 = data.construtor === Object;
+      // 如何 保证变量一定是函数
+      var res9 = data.construtor === Function;
+      var res10 = typeof data === "function";
+
+      // 如何判断data一个变量不是number 类型
+      var res11 = typeof data != 'number'  // true  不是number  false 是nunber 
+      // 或者  typerof data == 'number' 为 false 
+
+      // 如何让变量赋值是 Number 或者 字符串
+      var res12 = typeof data ==='number' || typeof data === 'string'
+
+      // 如何让变量 是 数组或者对象
+
+      var res13 = data instanceof Object
+      var res14 = data.construtor == Array || data.construtor == Object
+
+
+      // 练习题题:
+      var a;
+      var b;
+      var c;
+
+      // 需求  a 不能是 Number 并且b 必须是数组 或者c是字符串 
+
+      var res = (typeof c === 'string')||  (typeof a != 'number' && Array.isArray(b))
+    </script>
+  </body>
+</html>

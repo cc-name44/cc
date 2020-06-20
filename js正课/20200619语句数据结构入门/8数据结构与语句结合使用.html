@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var arr = ['1','2','3']
+      // // console.log(arr[0])
+      // // console.log(arr[1])
+      // // console.log(arr[2])
+      // for(var i =0;i<arr.length;i++){
+      //   console.log(arr[i])
+      // }
+
+      // var students = [
+      //     {name:'顾坤',age:27},
+      //     {name:'王宇航',age:21},
+      //     {name:'刘宇才',age:37},
+      //     {name:'王艳琴',age:18},
+      //     {name:"方雪子",age:2}
+      // ]
+      // // console.log('姓名：   ',students[0].name,'年聆:   ',students[0].age)
+
+      // for (var i = 0;i<students.length;i++){
+      //     console.log('姓名：   ',students[i].name,'年聆:   ',students[i].age)
+
+      // }
+
+      var teacher = [
+        { name: "范真", dec: "淑女", age: 18 },
+        { name: "闫歧", dec: "伪淑女", age: 17 },
+        { name: "金溪镇", dec: "男生", age: 37 },
+        { name: "管涛", dec: "笑嘻嘻", age: 47 },
+      ];
+      //   document.write(
+      //     "<h1>姓名：" + teacher[0].name + "，描述：" + teacher[0].dec + "</h1>"
+      //   );
+      //   document.write(
+      //     "<h1>姓名：" + teacher[1].name + "，描述：" + teacher[1].dec + "</h1>"
+      //   );
+      // 1  在终端输出；在页面中输出
+      // 页面中显示 年龄 大于等于18 的老师；
+      //   终端输出还是age< 小于18 岁的人
+
+      for (var i = 0; i < teacher.length; i++) {
+        if (teacher[i].age >= 18) {
+          document.write(
+              // "<h1>姓名：" + teacher[i].name + "，描述：" + teacher[i].dec + "</h1>"
+            `<h1>姓名：${teacher[i].name}，描述：${teacher[i].dec}</h1>`
+          );
+        }else{
+            console.log("姓名：   ", teacher[i].name, "年聆:   ", teacher[i].dec);
+
+        }
+
+      }
+    </script>
+  </body>
+</html>

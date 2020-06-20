@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>你好呀</div>
+    <script>
+        // 在页面中所见到的内容基本上都是字符串：文字 图片 视频 音频 div p ...
+        // 常见的字符串都已什么方式存在呢  
+
+        // 模板字符串= ` H5标签+字符串 `
+        document.write(`
+         <h1>hellow word</h1>
+        `)
+        // js 里面图片  
+        var imgSrc = 'https://bkimg.cdn.bcebos.com/pic/8601a18b87d6277fcfbcbb7621381f30e824fcd6?x-bce-process=image/resize,m_fill,w_640,h_360,align_0'
+
+        var str = '顾坤他是一个人'
+        var str1 = '111'
+        str1 = '真的是人吗？'  // 变量的重新赋值  
+        document.write(str,str1)  // 使用变量；用的是距离他最近的一次赋值 
+        console.log(str,str1)
+
+        // 练习
+        // 声明 3个变量分别秒速以下你自己 
+
+        // 练习2： 声明变量 init = 'hellow word'  console.log(init) 后---> 你好世界
+        var init = 'hellow word'
+        init = '你好世界' 
+        console.log(init)
+    </script>
+</body>
+</html>  

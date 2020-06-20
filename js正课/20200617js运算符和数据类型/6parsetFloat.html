@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // parsetFloat()  将其他类型数据转化为浮点型
+      /** 从第一个字符开始解析 解析到第一个非数字字符时候；不解析了；返回解析完的数字
+         * 1.第一个小数点是有效的，第二个小数点无效
+           2.始终忽略前面的0，不分进制数
+           3.十六进制会被转换成0
+           4.空字符串转换为NaN
+           */
+      console.log(parseInt(000000101000014000));
+      console.log(Number(070), parseInt("000000000000070")); // 70
+      console.log(Number(070), parseInt("000000000000dfasfdsa070")); // 0
+
+      console.log(parseFloat('11.2.120'));  //  11.2 第二个小数点无效
+      console.log(parseFloat('000124500545810'))  // 124500545810 忽略前面的0
+      console.log(parseFloat('0000asaa12'))   // 0  // 省略0 的非数组字符 
+      console.log(parseFloat('0xA'))   // 0 16进制
+      console.log(parseFloat(''))   // NaN 空字符装为Nan
+      console.log(parseFloat('0gukun'))   // NaN  开头非数字分非空字符
+      console.log(parseFloat('123bluye')); // 123  从第一个开始 找到第一个非数组字符b 不接解析了；返回 解析完的123 
+      
+
+
+
+    </script>
+  </body>
+</html>
