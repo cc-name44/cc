@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //日期对象  表示与时间相关的内容，年月日 时分秒 时间戳
+
+        //如何获取当前的时间？
+        //实例化日期对象，返回当前时间，以及api
+        var date  = new Date('2020-6-22 14:36:36');
+        console.dir(date)
+        //getFullYear()  返回当前对象中的年份
+        var year = date.getFullYear()
+        console.log(year)
+        console.log(date.getMonth()+1)
+
+        var nowDate = new Date();
+        var mount = nowDate.getMonth()+1//0-11
+
+        //获取时间戳，瞬间戳具有唯一性
+        //从1970年到现在的毫秒数
+        var time= nowDate.getTime();
+        console.log(time)
+
+        var Milliseconds = nowDate.getMilliseconds();
+        console.log(Milliseconds)
+
+        //进阶---> 日期格式化插件封装
+        console.log(nowDate.getFullYear()+'-'+(nowDate.getMonth()+1)+"-"
+        +nowDate.getDate()+' '+nowDate.getHours()+":"+nowDate.getMinutes()+':'
+        +nowDate.getSeconds())
+
+
+
+    </script>
+</body>
+</html>

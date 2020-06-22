@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var str = '人 ，人，人'
+    //replace(reg,newstr) 替换，返回替换后的结果，原来的字符没有变化
+    //将reg 匹配到的结果 被new str 所替换
+    var res = str.replace(/['人']/g,'dog')
+    console.log(res)
+</script>
+</body>
+</html>

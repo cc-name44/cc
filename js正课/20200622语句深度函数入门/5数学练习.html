@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 求 1*2*3*4*5*...20
+      //   var res = 1;
+      var res = "";
+      for (var i = 1; i <= 20; i++) {
+        // 求积
+        // console.log(res+' x ' +i)
+        // res *=i;
+        // 输出字符串
+        res += i + "*";
+      }
+
+      console.log(res[res.length - 1], res.length);
+      //   res[res.length-1] = ''  // 不生效
+      // 通过string 下api 完成
+      res = res.slice(0,res.length-1)
+      console.log(res);
+
+      // 求 1+2+3+4+...+20
+      //   var res = 0;
+      //   for(var i = 1;i<=20;i++){
+      //       console.log(i)
+      //       console.log(res+"+"+i)
+      //       res += i  // res = res + i
+      //   }
+      //   console.log(res)
+      //   console.log(0+0);
+    </script>
+  </body>
+</html>

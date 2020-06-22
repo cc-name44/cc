@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj ={
+            name:'cc',
+            age:17,
+            dec:'cccccccc'
+        }
+        //获取对象中每一个key  和value
+        for(var x in obj){
+            console.log(x)  //x赋值为对象中的key
+            console.log(obj[x])//对象取值
+
+            // x是'x'不是变量，取值为undefined
+            //console.log(obj.x)
+        }
+    </script>
+</body>
+</html>
