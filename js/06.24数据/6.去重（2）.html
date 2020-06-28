@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,1,12,12,123,134,34]
+        for(var i =arr.length;i>=0;i--){
+            for(var i =arr.length;i>=0;i--){}
+   
+            // console.log(arr[i])
+
+            if(arr[i]===arr[i-1]){
+                // 后面的项 与前面的项相等  注意 arr length变小
+                arr.pop();
+            }
+        }
+    </script>
+</body>
+</html>

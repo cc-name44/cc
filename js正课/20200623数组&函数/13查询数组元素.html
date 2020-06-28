@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=sc, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如何判断某个数值中书否含有某个元素
+
+        var arr = ['222','顾坤',23,true];
+
+        // 1: 方式一 遍历 + if
+        // for(var i =0,len= arr.length;i<len;i++){
+        //     if(arr[i]==='顾坤'){
+            //   找到数据后 做其他业务
+        //         alert('找到了')
+        //         break
+        //     }
+        // }
+
+        // 方式二
+        // arr.indexOf(item)  返回数组元素的索引值。如果为 -1 证明数组中没有这个元素 
+        var res = arr.indexOf('顾坤')
+        if(res!=-1){
+            alert('找到了')
+        }
+        console.log(res)
+    </script>
+</body>
+</html>

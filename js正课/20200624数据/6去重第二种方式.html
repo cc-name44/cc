@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 1, 12,12,12,2, 2,2, 23, 3, 3, 3];
+      // 从头用 第一项 与后面的每一项进行比较
+      for (var i = 0; i<arr.length; i++) {
+        for (var j = i+1; j < arr.length; j++) {
+          if (arr[i] === arr[j]) {
+            // 后面的项 等于前面的项目  删除其中一项。注意：arr length变小了
+            arr.splice(j,1)
+            j--  // 删除元素后  for 循环回退一步；如果 没有 j-- 会漏掉数据
+          }
+        }
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

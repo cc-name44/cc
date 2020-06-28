@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 33, 3, 3, 5, 3, 4, 5, 6];
+
+      // var res = []; // 保证res 中数据 不是重复的；
+
+      // var flag = false; // 表示 res 中 是否含有这个数据  true 有  fals没有
+
+      // for (var i = 0; i < arr.length; i++) {
+      //   for (var j = 0; j <= res.length; j++) {
+      //     // 让arr 中每一项 与 res 中进行比较；然后添加不重复的数据
+      //     if(arr[i]==res[j]){
+      //         flag = true;
+      //         break
+      //     }else{
+      //         flag = false
+      //     }
+      //   }
+
+      //   // 如果 res 中没有 arr[i],那么就添加 arr[i]
+      //   if (!flag) {
+      //     res.push(arr[i]);
+      //   }
+      // }
+      // console.log(res);
+
+      var res = []
+
+      for(var i = 0;i<arr.length;i++){
+        if(res.indexOf(arr[i])==-1){
+          res.push(arr[i])
+        }
+      }
+
+      console.log(res)
+    </script>
+  </body>
+</html>

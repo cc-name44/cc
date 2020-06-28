@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,4,5]
+        // 返回回调函数中运算的新数组  可以实现【深拷贝】
+        var res = arr.map(function(item){
+            console.log(item)
+            return item
+        })
+        res.push('ccc')
+        console.log(res)
+        console.log(arr)
+
+        // 浅拷贝：一个改变另外一个也会改变
+        var arr1 = []
+        var res1 =arr1
+        res1.push('res')
+        console.log(arr1,res1)
+    </script>
+</body>
+</html>

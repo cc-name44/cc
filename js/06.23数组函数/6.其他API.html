@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5]
+        var arr1 =['2','4']
+        var res =['d','d'];
+
+        // concat()  作用：合并数组并返回合并后结果
+
+        //需求  将以上 arr arr1 res 素组全部合并到arr
+        // 注意：arr 数组长度变化了  是合并的三个长度之和
+        res = arr.concat(arr1)
+        arr = arr.concat(res)
+        console.log(arr)
+
+        //颠倒数组
+        var reverseArr = arr1.reverse();
+        console.log(reverseArr)
+
+        var arr2 = [1,2,'aaa',,3,3,3,3,3,3,33,3]
+        //arr.slice(startIndex.endIndex) 返回数组片段
+        //参数1：从哪个索引值开始
+        //参数2：到哪个索引值结束，包含startIndex，不包含endIndex
+        var res2 = arr2.slice(3,6);
+        console.log(res2)
+    </script>
+</body>
+</html>

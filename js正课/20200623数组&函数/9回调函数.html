@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 回掉函数：指的是将一个函数作为参数的方式传递给俩一个函数
+        function foo(callBack){
+            console.log('foo');
+            // bar()    // 直接再一个函数中调用俩一个函数      
+            callBack()  // 回调函数
+        }
+        var bar = function(){
+            console.log('我是回掉函数')
+        }
+        // 如果想让bar 函数执行 再 foo 函数中执行；有几种方式
+        foo(bar)
+        foo(function(){
+            console.log('毁掉函数')
+        })
+
+
+
+
+// // 两个变量不一样
+// var a = '11'
+// var b = '11'
+// function bar(){}
+// // c d  赋值 相同；毕竟是两个变量
+// var c = bar;
+// var d = bar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

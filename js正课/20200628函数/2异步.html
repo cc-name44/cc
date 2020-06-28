@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('bbbbbbbbbbb');
+        // setTimeout是个异步
+        // 需要【慢】一点执行的，并且代码在上；才用异步 
+        // 同步代码都是最【快】的。 
+
+        // 定时器(计时器)  
+        // 参一： 是回掉函数  参二：时间
+        // 表示：经过 16.2ms 后执行回掉函数 
+        // 浏览器刷新时间是 16.2ms 
+        setTimeout(function (){
+           console.log('aaaaaaaaaaa')
+        }, 16.2);
+
+        setTimeout(function (){
+           console.log('3333333333333')
+        }, 2000);
+
+        console.log('1111111111111')
+      
+        
+    </script>
+</body>
+</html>

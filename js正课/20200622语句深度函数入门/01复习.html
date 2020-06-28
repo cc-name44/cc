@@ -52,14 +52,23 @@
     //   }
 
     // 程序优化：执行的少；就可以获取结果
-      for (var i = 0; i < 5; i++) {
-          if(i===1){
-            console.log(i,'============') //3
-            // break 表示跳出本次循环 
-            break
-          }
-          console.log(i)
-      }
+      // for (var i = 0; i < 5; i++) {
+      //     if(i===1){
+      //       console.log(i,'============') //3
+      //       // break 表示跳出本次循环 
+      //       break
+      //     }
+      //     console.log(i)
+      // }
+
+      var str = '今日按日子真的好呀'
+      var arr = [];
+        var str1;
+        for (var i =0;i<str.length;i+=2) {
+            str1 = str.substr(i,2);
+            arr[i]=str1
+        }
+        console.log(arr)
     </script>
   </body>
 </html>
