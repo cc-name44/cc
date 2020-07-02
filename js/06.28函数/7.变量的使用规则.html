@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var test = '全局变量';
+        function foo(){
+            var a = 0       //不会销毁，因为bar函数体重还需要使用
+            var c = 'ccc'   //销毁
+            // console.log(b)//大的作用域不能访问小的作用域
+            console.log(a,'aaaaa');
+            return function bar(){
+                var b = 'b'
+                ++a
+                console.log(a)
+            }
+            // bar()
+        }
+        foo();
+        var bar=foo()
+        bar();
+        bar();
+        bar();
+        bar();
+        bar();
+        bar();
+
+        // 变量的使用规则是什么？
+        // 第一步 在自己的作用域中找 var 声明的变量
+        // 如果没有，去上一层作用域中找，  直到找到全局的作用域为止
+        // 在中间任何一个作用域中找到，就使用那一层的变量，
+        // 如果一直都没有，就报错
+
+
+        // 只有var 是声明变量 其余一律是使用变量
+        // 使用变量：直接用值，重新赋值
+
+        // 所有作用域中var 声明的变量 都会提升到 当前作用域的最顶端，赋值不提升
+        // undefined 变量已声明，未赋值；is not defined 变量未声明
+
+    </script>
+</body>
+</html>

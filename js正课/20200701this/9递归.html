@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 递归: 函数内部自己调用自己
+      // var count = 0
+      // 坑 死循环
+      // function foo(){
+      //     console.log(++count)
+      //     foo()
+      // }
+      // foo()
+
+      // 做递归: 1:找规律(数学公式) 2: 找出口
+    //   var count = 0
+    //   function foo(){
+    //       // 当count>10 结束
+    //       if(count>10){
+    //           return
+    //       }
+    //       console.log(++count)
+    //       foo()
+    //   }
+    //   foo()
+
+      // 要求: 1+2+3+4+%+...+10 的和 用递归做
+      // 1找顾虑: sum = 10(1+10)/2
+        // var num = 0;
+        // function sum(n) {
+        //   if (n > 10) {
+        //     return num;
+        //   }
+        //   num += n;
+        //   console.log(n);
+        //   return sum(n + 1);
+        // }
+        // var res = sum(1);
+        // console.log(res);
+
+        function Point(x, y){ 
+       console.log(this); //
+       this.x = x; 
+       this.y = y; 
+       this.moveTo = function(x,y){
+          this.x = x;
+          this.y = y;
+          console.log(this.x);
+          console.log(this.y);
+       }
+    }
+    var p1 =  new Point(0,0); 
+
+    var p2 = {
+        x:0,
+        y:0
+    }
+    p1.moveTo(1,1); 
+    p1.moveTo.apply(p2,[10,10]);
+
+    // console.log(x);
+    // console.log(y);
+
+    </script>
+  </body>
+</html>

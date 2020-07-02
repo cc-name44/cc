@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   // 难度4级 综合能力强 分析力 运算能力
+      //   var num = 1;
+      //   var myObject = {
+      //     num: 2,
+      //     add: function () {
+      //       //   console.log(this);
+      //       this.num = 3; // myObject.num = 3
+      //       // window 调用
+      //       (function () {
+      //         // console.log(this);
+      //         console.log(this.num); // window.num
+      //         this.num = 4; // window.num = 4
+      //       })();
+      //       console.log(this.num); // myObj.num  3
+      //     },
+      //     sub: function () {
+      //       console.log(this.num);
+      //     },
+      //   };
+      //   myObject.add();
+      //   console.log(myObject.num); // 3
+      //   console.log(num); // 4
+      //   var sub = myObject.sub;
+      //   sub(); // 4
+
+      // 难度3  综合； 闭包
+      //   var name = "window";
+      //   var person1 = {
+      //     name: "person1",
+      //     show1: function () {
+      //       console.log(this.name); // person1.name  person1
+      //       // person2.name // person2
+      //     },
+      //     show3: function () {
+      //       console.log(this)
+      //       return function () {
+      //         console.log(this.name); // windwo.name // window
+      //         //person2.name
+
+      //         // winndow.name
+      //       };
+      //     },
+      //   };
+      //   var person2 = { name: "person2" };
+
+      //   person1.show1();
+      //   person1.show1.call(person2);
+
+      //   person1.show3()();
+      // //   //   var res = person1.show3();
+      // //   //   res()
+      //   person1.show3().call(person2);
+      //   person1.show3.call(person2)();
+      // //   var res = person1.show3.call(person2)
+      // //   ret()
+
+      // 第三题
+      // var name = '周超'
+      // (function(){
+      //   var name = '余非'
+      //   console.log(this.name) // window.name 周超
+      // })()
+
+      // 第四题
+      // var name = "周超";
+      // function foo() {
+      //   (function () {
+      //     var name = "余非";
+      //     console.log(this.name); // 周超
+      //   })();
+      // }
+      // foo()
+
+      // 第五题
+      // function foo(){
+      //   console.log(this)
+      //   return function(){
+      //     console.log(this)
+      //   }
+      // }
+      // var obj = {
+      //   say:foo
+      // }
+      // // 存的 是 foo 函数执行的返回值
+      // var res = obj.say()
+      // res()
+      // obj.say()()
+      /*运算过程 
+       无名函数需要一个存放地址；要么放在变量中 要么；() 分组中
+       function(){
+         console.log(this)
+       }()
+       (function(){
+         console.log(this)
+       })()X
+      */
+
+      // 规律 嵌套函数；父函数中this 不等于 子函数this，分别按照套路判断
+
+      // 第六题
+      // (function(){
+      //   console.log(this) // window
+      //   return function(){
+      //     console.log(this)  // window
+      //   }
+      // })()()
+
+      // 第七题
+      // var obj = {};
+      // (function () {
+      //   console.log(this); // window
+      //   return function () {
+      //     console.log(this);
+      //   };
+      // })().call(obj);
+
+      // 第八题
+      // (function () {
+      //   console.log(this); 
+      //   return function () {
+      //     console.log(this);
+      //   };
+      // })().call(this);
+
+      
+      // 第九题
+      var obj = {};
+      // call 触发函数
+      (function () {
+        console.log(this); 
+        return function () {
+          console.log(this);
+        };
+      }).call(obj)
+
+      (function () {
+        console.log(this); 
+        return function () {
+          console.log(this);
+        };
+      })()
+
+    </script>
+  </body>
+</html>

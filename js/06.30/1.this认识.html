@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this 是状态机  是动态变化的对象  随着作用域改变而改变
+        // this 伴随着作用域产生而产生的
+        // 一个没有作用域的语法塘 是没有this 的
+        // 语法塘 ：由js代码片段形成的具有功能性的  api东西
+
+        // 掌握：如何判断this 指向   在什么环境下指向谁？
+        // this 只能指向的是对象
+
+        // console.los(this)//在全局下  指向window
+
+        
+
+            // function 方法题中 this 执行谁?
+
+        //     function foo(){
+        //     console.log(this)// window
+        //     console.log('window 下的函数')
+        // }
+        // foo()
+        
+        // function bar(name){
+        //     console.log(this)  // 指向 new 实例的对象 
+        //     this.name = name
+        // }
+
+        // var wyh = new bar('王宇航')
+
+        var obj = {
+            foo:function(){
+                console.log(this,'--------')
+                // console.log(this.name)
+            },
+            name:'王宇哈根'
+        }
+        obj.foo()
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'aaaaa';
+        function foo(){
+            console.log(arguments)
+            var name = 'bbbbb';
+            console.log(this.name)
+
+        }
+        var one = {
+            name:'ccccccc',
+            foo:foo
+        }
+        var two = {
+            name:'ddddd',
+            foo:foo,
+            cname:this.name
+        }
+        // foo()
+        // one.foo()
+        // two.foo()
+
+        // call():改变function函数this指向 
+        // 参数一：指定this 指向的对象
+        // 参二~参n：给调用函数foo  传入实参
+        foo.call(two,'ssssssssssssssssss',12)
+        foo()
+        one.foo.call(window)
+
+        // apply：改变function函数中 this 指向 触发函数
+        // 参数一：指定this 指向的对象
+        // 参数二：伪数组，作用：调用函数传入的实参
+
+        // bind：改变function 函数中this 指向，加上执行符，才能触发函数
+        // 参数：指定this 指向对象
+
+        // 思考：call  apply  bind 的区别？
+        // 
+
+    </script>
+</body>
+</html>

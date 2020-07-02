@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. xx.xxx() xx()
+        // 2. new xxx()
+        // 3. xxx.call() xxx.apply() xxx.bind()()
+        // 4. 事件触发
+
+        function foo(){
+            consle.log('aaa')
+        }
+        // window.foo()
+        var obj ={
+            foo:foo
+        };
+        // obj.foo();
+        // new foo();
+
+        foo.call(window);
+        foo.apply(window);
+        foo.bind(window)()
+
+        // 立即执行函数
+        
+
+    </script>
+</body>
+</html>

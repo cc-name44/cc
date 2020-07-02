@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.先看this在哪个作用域中
+        // 全局----->this = window
+
+        // function函数体中
+        // 2.看函数执行
+        //      判断执行了哪一个函数，再看方法体中
+        // 2.1  看是否有call apply bind ，有---->参一是谁this就指向谁
+        // 2.2  看是否是事件处理函数  是---->触发事件元素
+        // 2.3  调用函数是否是new 是构造函数，this 指向new  示例的对象
+        // 2.4  以上都不满足，谁调用就指向谁
+
+        var wzx = {
+            name:'我在想',
+            say:function(){
+                console.log()
+            }
+        }
+    </script>
+</body>
+</html>
