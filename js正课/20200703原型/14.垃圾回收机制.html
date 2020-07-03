@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 引用
+        // 分类：显示引用 和隐士引用
+
+        // 显示引用：一个对象访问另一个对象下属性
+        // -------->一个对象引用另一个对象
+        // 隐士引用：一个对象，通过原型对象访问属性
+
+        // 对象指的是：GO AO 函数对象  普通对象
+
+        // 引用计数垃圾收集
+        // ------>关键看 一个对象是否被其他对象所引用、使用
+        // 零引用的对象被垃圾回收机制所回收
+
+        var o = {
+            a:{
+                b:2,
+            },
+        };
+        // 两个对象，一个key 为a  一个key 为b
+        // 两个对象创建，一个作为另一个的属性被引用，另一个被分配给变量o
+        // 没有一个可以被垃圾收集
+        var o2 = o;
+        o = 1
+        var oa = o2.a
+
+        // 总结：代码从头执行到尾部，如果说这个对象，
+        // 以及对象中属性，没有被任何全局
+         
+    </script>
+</body>
+</html>
