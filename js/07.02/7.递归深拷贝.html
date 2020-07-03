@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'cccc',
+            list:[{
+                name:'ffff'
+            },
+            {
+                name:'gggg',
+                say:'nnnnnn'
+            }]
+        }
+
+        // deepCopy  实现的是数组或对象的深层拷贝
+        // 递归深拷贝
+        // 1.需要考虑每次拷贝的数，是数组或者对象  不确定 
+        function deepCopy(params){
+            // 如果是数组
+            if(Array.isArray(params)){
+                var res = []
+                for(var i = 0;i<params.length;i++){
+                    if(params[i] instanceof Object){
+                        res.push(deepCopy(params[i]))
+                    }else{
+                        res.push(params[i])
+                    }
+                    
+                }
+                return res
+            }
+            // 如果是对象
+            if(params.constructor === Object){
+                // 声明空对象
+                var res ={}
+                // 遍历被拷贝对象
+                for(var x in params){
+                    // 如果是数组或对象，需要再次拷贝
+                    if(params[x] instanceof Object){
+                        // 将深拷贝的结果添加到 res中
+                        res[x] = deepCopy(params[x])
+                    }
+                    else{// params[x]为基本类型数据  直接添加到res中
+                        res[x] = params[x]
+                    }
+                   
+                    // params[x] 表示数组对象
+                }
+                return res
+            }
+        }
+
+        var res = deepCopy(obj)
+        console.log(res)
+
+        // 未来面试题，考察js 基础逻辑问题
+        // 数值 逻辑 递归 if for 方法封装 综合掌握度
+        // 如何写与数据类型有关的判断表达式
+    </script>
+</body>
+</html>

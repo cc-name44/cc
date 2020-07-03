@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量或属性key 赋值 js 基本类型数据  存的是数据
+        // 变量或属性key 赋值引用类型数据  存的是【指针】
+        // var obj = {
+        //     name:'yq',
+        //     age:17
+        // }
+        // function copyObject(obj){
+        //     if(arguments.length == 0){
+        //         throw new Error('arguments.length can not zero');
+        //     }
+
+        //     var res = {};
+        //     for(var x in obj){
+        //         // xxx.xx.xx 点左边的赋值都是对象，xx本身类型是【字符串】
+        //         res[x] = obj[x];
+        //     }
+        //     return res;
+
+        // }
+        // var res =  copyObject({
+        //     name:'zzzz',
+        //     age:13,
+        // });
+     
+        // console.log(res)
+        // console.log(obj)
+
+        // copy 拷贝数组或对象 并返回结果
+        var res = copy({name:'ccccc'});
+        var res1 = copy([1,2,1,1])
+        function copy(param){
+            if(arguments.length == 0){
+                throw new Error('arguments.length can not zero');
+            }
+            if(arguments.length > 1){
+                throw new Error('arguments.length can not zero');
+            }
+            if(!(param instanceof Object)){
+                throw new Error('arguments.length can not zero');
+            }
+            
+            // 如果参数为数组
+            if(Array.isArray(param)){
+                var res = [];
+                for(var i =0;i<param.length;i++){
+                    res.push(param[i]);
+                }
+                return res;
+            }
+            if(param.constructor === Object){
+                var res = {};
+                for(var x in obj){
+                    res[x] = obj[x];
+                }
+                return res;
+            }
+        }
+        var param = {
+            name:'ffff',
+            link:['a','1']
+        }
+        var res = copy()
+       
+    </script>
+</body>
+</html>

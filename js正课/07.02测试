@@ -1,0 +1,60 @@
+  //1.
+  function strReverse(str){
+            var j=0
+            strReverse = new String('')
+            for(var i=str.length-1;i>0;i--){
+            
+            strReverse += str.charAt(i)
+            
+        }
+        return strReverse
+        }
+        
+        console.log(strReverse(str))
+        //2.
+         function randomNum(){
+            var res =  Math.random()*50
+            var num = Math.ceil(res)
+            return num
+        }
+        console.log(randomNum())
+        //3.
+         var arr=[1,1,2,2,3,4,2,6,7];
+        function randomNum(arr){
+            var newArr =[];
+            var mark = false
+        for(i = 0;i<arr.length;i++){
+            for(j = 0;j<newArr.length;j++){
+                if(arr[i]==newArr[j]){
+                    mark = true
+                    break;
+                }else(
+                    mark =false
+                )
+            }
+            if(!mark){
+                newArr.push(arr[i])
+            }
+        }return newArr
+
+        }
+        console.log(randomNum(arr))
+        //4.
+
+        //5.
+          function randomNum(arr){
+            var newArr = []
+        for(i = 0;i<arr.length;i++){
+            for(j = i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;            
+                }
+            
+            }
+        }return arr
+
+        }
+        console.log(randomNum(arr))
+
