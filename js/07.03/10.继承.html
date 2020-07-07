@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型对象的作用：继承
+        // 1.面向对象开发(抽象)
+
+        // 继承例子
+        var perso = function(name){
+            this.name =name;
+        };
+        perso.prototype.getName = function(){
+            return this.name;
+        }
+        perso.prototype.setAge =function(age){  
+            this.age = age;
+        }
+        var obj = {
+            name:'语法',
+            age:7
+        }
+        var zc = new perso('cccccc');
+        var res = zc.getName();
+        zc.setAge.call(obj,21)
+        console.log(zc)
+        console.log(res)
+        console.log(obj)
+        // zc 的 __proto__指向的是 perso 的prototype
+       
+    </script>
+</body>
+</html>
