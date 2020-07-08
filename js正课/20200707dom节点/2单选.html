@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <script>
+      // 第一步 选中需要被操作的标签
+      var h1s = document.getElementsByTagName("h1");
+      var h1s1 = h1s[0];
+      var h1s2 = h1s[1];
+      var h1s3 = h1s[2];
+      var h1s4 = h1s[3];
+      var h1s5 = h1s[4];
+
+      // 给5个对象添加私有属性
+      //   h1s1.i = 0;
+      //   h1s2.i = 1;
+      //   h1s3.i = 2;
+      //   h1s4.i = 3;
+      //   h1s5.i = 4;
+
+      // 第二步骤： 处理用户行为
+
+      //   var flag = true;
+      //   // 处理当用户点击第一个H1 的时候；h1 的响应
+      //   h1s1.onclick = function () {
+      //     // 具体处理用户的某一个行为，
+      //     // 点击 字体变蓝色
+      //     flag ? (h1s1.style.color = "blue") : (h1s1.style.color = "");
+      //     flag = !flag;
+      //   };
+      //   // 产生这个问题的原因是什么呢？ ----->变量被污染了
+      //   h1s2.onclick = function () {
+      //     flag ? (h1s2.style.color = "blue") : (h1s2.style.color = "");
+      //     flag = !flag;
+      //   };
+
+      // 如何解决flag 变量被污染问题
+      (function () {
+        var flag = true;
+        // 处理当用户点击第一个H1 的时候；h1 的响应
+        h1s1.onclick = function () {
+          // 具体处理用户的某一个行为，
+          // 点击 字体变蓝色
+          flag ? (h1s1.style.color = "blue") : (h1s1.style.color = "");
+          flag = !flag;
+        };
+      })();
+
+      (function () {
+        var flag = true;
+        // 处理当用户点击第一个H1 的时候；h1 的响应
+        h1s2.onclick = function () {
+          // 具体处理用户的某一个行为，
+          // 点击 字体变蓝色
+          flag ? (h1s2.style.color = "blue") : (h1s2.style.color = "");
+          flag = !flag;
+        };
+      })();
+
+      (function () {
+        var flag = true;
+        h1s3.onclick = function () {
+          flag ? (h1s3.style.color = "blue") : (h1s3.style.color = "");
+          flag = !flag;
+        };
+      })();
+
+      (function () {
+        var flag = true;
+        h1s4.onclick = function () {
+          flag ? (h1s4.style.color = "blue") : (h1s4.style.color = "");
+          flag = !flag;
+        };
+      })();
+
+      (function () {
+        var flag = true;
+        h1s5.onclick = function () {
+          flag ? (h1s5.style.color = "blue") : (h1s5.style.color = "");
+          flag = !flag;
+        };
+      })();
+    </script>
+  </body>
+</html>

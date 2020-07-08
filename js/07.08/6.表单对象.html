@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <input type="checkbox">
+        <button>提交</button>
+
+        <select name="" id="">
+            <option value="china"></option>
+            <option value="america"></option>
+            <option value="bangz"></option>
+        </select>
+    </form>
+    <script>
+        formObject[1].checked = true;
+        // 获取焦点
+        formObject[0].focus()
+
+        // 问题：select option 用户选择的是哪一个？
+
+        // 封装方法
+        // 作用： 返回select option 选择的内容
+        var select = formObject[3];
+
+        function select(){
+            if(arguments.length === 0){
+                throw new Error
+            } 
+
+
+
+
+            var res = null;
+            for(var i = 0;i<select.length;i++){
+                if(select[i].selected){
+                    res = {
+                        el:select[i],
+                        value:select[[i].value
+                    };
+                }
+            }
+            return res;
+        }
+    </script>
+</body>
+</html>

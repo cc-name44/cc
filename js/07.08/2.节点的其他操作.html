@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <span></span>
+    </div>
+    <script>
+        var wrap = document.getElementsByClassName('wrap')[0]
+        var span = document.querySelector('span');
+        var newE1 = document.createElement('div')
+
+
+        // parent.replaceChild(newE1，oldE1)  用参数一替换参数二
+        // newE1 表示新元素
+        // oldE1 表示旧元素
+        // parent 表示父元素
+        wrap.replaceChild(newE1,span)
+
+        var cloneE1 = wrap.cloneNode(true);
+        console.log(cloneE1)
+
+    </script>
+</body>
+</html>

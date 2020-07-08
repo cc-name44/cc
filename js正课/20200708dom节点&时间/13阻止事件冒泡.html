@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=., initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: seagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box">
+        <div class="child"></div>
+      </div>
+    </div>
+    <script>
+      var child = document.querySelector(".child");
+      var box = document.querySelector(".box");
+      var wrap = document.querySelector(".wrap");
+
+      child.addEventListener(
+        "click",
+        function (e) {
+          // 阻止事件冒泡 ---> 祖籍中的事件处理函数不会触发
+          e.stopPropagation();
+          console.log("child");
+          console.log(e.target);
+          e.target.style.background = "yellow";
+          //   this.style.background = "seagreen";
+        },
+        false
+      );
+
+      box.addEventListener(
+        "click",
+        function (e) {
+          e.stopPropagation();
+          console.log("box");
+          e.target.style.background = "blue";
+          //   this.style.background = "red";
+        },
+        false
+      );
+      wrap.addEventListener(
+        "click",
+        function (e) {
+          console.log("wrap");
+          e.target.style.background = "red";
+          //   this.style.background = "black";
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <h1>余非最可爱，周超最帅气。挺有眼原的。</h1>
+    <script>
+      //   var h1s = document.getElementsByTagName('h1');
+      //   for(var i = 0,len = h1s.length;i<len;i++){
+      //       // console.log(h1s[i])
+      //       console.log(i)
+      //       // 给每一个 h1 标签绑定点击是事件
+      //       h1s[i].onclick = function(){
+      //           // 坑：btn[i] 不存在 因为异步 ,这里程序比全局 for 还慢 所以【 全局的 i】 = 5
+      //           // console.log(i,this)
+      //           // 需求：找到被点击的元素 ----> this
+      //           this.style.color = 'blue'
+      //       }
+      //   }
+      //   console.log(i)
+
+      // 第二个功能
+      // 思路一  this 闭包
+      //   var h1s = document.getElementsByTagName("h1");
+      //   for (var i = 0, len = h1s.length; i < len; i++) {
+      //     // console.log(h1s[i])
+      //     console.log(i);
+      //     (function () {
+      //       var flag = true;
+      //       h1s[i].onclick = function () {
+      //         flag ? (this.style.color = "blue") : (this.style.color = "");
+      //         flag = !flag;
+      //       };
+      //     })();
+      //   }
+      //   console.log(i);
+
+      // 思路二 闭包思维
+      //   var h1s = document.getElementsByTagName("h1");
+      //   for (var i = 0, len = h1s.length; i < len; i++) {
+      //     console.log(i);
+      //     (function () {
+      //       var flag = true;
+      //       var x = i;  // 解决 变量污染 全局i=5 的问题
+      //       h1s[i].onclick = function () {
+      //         // console.log(x);
+      //         flag ? (h1s[x].style.color = "blue") : (h1s[x].style.color = "");
+      //         flag = !flag;
+      //       };
+      //     })();
+      //   }
+      //   console.log(i);
+
+      // 给对象添加私有属性方式。 没有闭包
+      var h1s = document.getElementsByTagName("h1");
+      for (var i = 0, len = h1s.length; i < len; i++) {
+        // 给5个对象分别添加私有属性flag 并初始值true   
+        h1s[i].flag = true;
+        // 给5个 h1dom对象；分别添加私有属性i 并赋不同的初始值
+        h1s[i].i = i;
+        h1s[i].onclick = function () {
+          // 使用 对象下私有属性 i
+          this.flag
+            ? (h1s[this.i].style.color = "blue")
+            : (h1s[this.i].style.color = "");
+          this.flag = !this.flag;
+        };
+      }
+      console.log(i);
+    </script>
+  </body>
+</html>

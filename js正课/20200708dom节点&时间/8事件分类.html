@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrap {
+        width: 100px;
+        height: 100px;
+        background-color: chartreuse;
+        transition: all 0.5s;
+      }
+      .active#wrap {
+        width: 400px;
+        height: 300px;
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap" class="">
+      <div class="box"></div>
+      <input type="text" />
+    </div>
+    <script>
+      var wrap = document.getElementById("wrap");
+      // // 监听鼠标再整个页面中移动范围
+      // document.onmousemove= function(){
+      //     console.log('鼠标再整个浏览器页面上移动了')
+      // }
+      // // 监听某个元素 鼠标移动的情况
+      // wrap.onmousemove = function(){
+      //     console.log('监听鼠标再 wrap 上移动')
+      // }
+      // // 问题： document 和wrap 都监听了
+
+      //   wrap.onmouseenter = function () {
+      //     console.log("鼠标移入到 wrap上");
+      //     wrap.className = "active";
+      //   };
+      //   wrap.onmouseleave = function () {
+      //     console.log("鼠标离开wrap");
+      //     wrap.className = "";
+      //   };
+      // wrap.onmousedown = function(){
+      //     console.log('随便按下鼠标按键')
+      // }
+
+      var ipt = document.querySelector("input");
+      // 键盘事件
+      //   document.onkeydown = function(){
+      //       console.log('按下键盘了')
+      //   }
+
+      // 推荐这种方式
+      ipt.onkeyup = function () {
+        console.log("松开键盘触发");
+      };
+    </script>
+  </body>
+</html>

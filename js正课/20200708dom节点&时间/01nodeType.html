@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap" data-wyq="wangyanqian">我是内容</div>
+    <script>
+        var wrap = document.getElementsByClassName('wrap')[0];
+        var div = document.querySelector('.wrap');
+        console.log(wrap.nodeType); // Elemetn_node
+        console.log(div.nodeType)
+        var txt = document.createTextNode('我是文本呢日哦那个');
+        console.log(txt.nodeType)  // 3 文本节点  
+
+        // getAttribute() 返回某个元素的属性 的值 
+        // data-wyq 自定义属性  data-*
+        console.log(div.getAttribute('data-wyq'))
+
+        // nodeType 作用返回 dom数上节点类型
+        // 1 元素节点；
+        // 2 是属性系欸但
+        // 3 文本节点
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="yellow">黄色</button>
+    <button class="red">红色</button>
+    <button class="green">绿色</button>
+    <button class="purple">紫色</button>
+    <br>
+    <br>
+    <button class="change">设置颜色</button>
+    <div class="content">内容</div>
+    <script>
+        var yellow = document.querySelector('.yellow')
+        var red = document.querySelector('.red')
+        var green = document.querySelector('.green')
+        var purple = document.querySelector('.purple')
+        var change = document.querySelector('.change')
+        var content = document.querySelector('.content')
+
+        var contentColor = document.getElementsByTagName('button')
+        console.log(contentColor[1].className)
+
+        for(var i = 0;i<contentColor.length-1;i++){
+
+            contentColor[i].addEventListener(
+            'click',
+            function(){
+                console.log(this)
+                content.style.color = ''
+                change.style.value = this.className
+            },
+            false
+        )
+
+        }
+      
+        change.addEventListener(
+            "click",
+            function () {
+            content.style.color = change.style.value;
+            },
+            false
+        );
+
+        // yellow.addEventListener(
+        //     "click",
+        //     function () {
+        //     change.style.value = yellow.className;
+        //     },
+        //     false
+        // );
+
+        // red.addEventListener(
+        //     "click",
+        //     function () {
+        //     change.style.value = red.className;
+        //     },
+        //     false
+        // );
+        // green.addEventListener(
+        //     "click",
+        //     function () {
+        //     change.style.value = green.className;
+        //     },
+        //     false
+        // );
+        // purple.addEventListener(
+        //     "click",
+        //     function () {
+        //     change.style.value = purple.className;
+        //     },
+        //     false
+        // );
+
+
+
+
+
+       
+
+    </script>
+
+</body>
+</html>

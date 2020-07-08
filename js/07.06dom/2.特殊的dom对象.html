@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 获取 【页面】 元素对象
+        // ----->  获取页面的高度，监听行为 。。。
+
+        // 兼容型问题  IE  9 以下  为问题
+        var dom = document.documentElement;
+        console.log(dom)
+
+        var dom = document.body;
+        console.log(body)
+
+    // 如果 document.documentElement 有返回值 那么赋值为document.documentElement的返回值
+    // 如果没有则赋值为 document.body
+        var node = document.documentElement || document.body
+    </script>
+</body>
+</html>

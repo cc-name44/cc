@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">
+            <span>内容1</span>
+            <span>aaaaaaaaaaaaa</span>
+        </div>
+        <div class="box1">
+            <span>内容2</span>
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var box1 = document.querySelector('.box1')
+        box.innerHTML = '安' // 重新赋值
+        var text = document.createTextNode('β')
+        box1.appendChild(text) // 插入 累加
+    </script>
+</body>
+</html>

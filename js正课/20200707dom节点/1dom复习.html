@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button>显示</button>
+    <script>
+      var box = document.getElementsByClassName("box")[0];
+      console.log(box);
+      var btn = document.getElementsByTagName("button")[0];
+      // var count = 0
+      // btn.onclick = function(){
+      //  统计 用户 点击了多少次 button 按钮
+      //     // console.log(++count)
+      //     if(++count % 2 === 1){
+      //         box.className = 'box hidden'
+      //     }else {
+      //         box.className = 'box'
+      //     }
+      // }
+
+      // var flag = true;// true为显示 false 为隐藏
+      // btn.onclick = function(){
+      //     if(!flag){
+      //         box.className = 'box'
+      //         flag = true
+      //     }else{
+      //         box.className = 'box hidden'
+      //         flag = false;
+      //     }
+      // }
+
+      // 优化
+      var flag = true; // true为显示 false 为隐藏
+      btn.onclick = function () {
+        // 取反操作
+        flag = !flag;
+        console.log(flag);
+        // 三目运算符符号 也叫 三元运算符
+        flag ? (box.className = "box") : (box.className = "box hidden");
+
+        // if(flag){
+        //     box.className = 'box'
+        // }else{
+        //     box.className = 'box hidden'
+        // }
+      };
+    </script>
+  </body>
+</html>

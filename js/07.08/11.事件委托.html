@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+        <p>内容5</p>
+    </div>
+   
+    <script>
+        // var ps = document.querySelectorAll('p');
+        // for(var i = 0;i<ps.length;i++){
+        //     console.log(ps[i])
+        //     ps[i].onclick = function(e){
+        //         console.log(e.target)
+        //         e.target.style.color = 'red'
+        //     }
+        // }
+
+        var wrap = document.querySelector('.wrap');
+        wrap.onclick = function(e){
+            console.log(e.target)
+            // 因为 触发的目标是p ，利用事件机制实现事件委托
+            // 
+            e.target.style.color = 'red';
+        }
+
+        // 事件委托，将事件处理委托给祖籍元素
+        // 事件委托是如何实现的？
+        // 通过事件机制，实现事件委托
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div><input type="checkbox" value="1"><span>内容1</span></div>
+        <div><input type="checkbox" checked value="2"><span>内容2</span></div>
+        <div><input type="checkbox" checked value="3"><span>内容3</span></div>
+        <div><input type="checkbox" checked value="4"><span>内容4</span></div>
+        <div><input type="checkbox" value="5"><span>内容5</span></div>
+    </form>
+    <script>
+        // 多选：
+        // 问题：如何获取用户勾选了哪些内容，并知道选择了什么？
+        // 第一步，获取所有的input = checkbox
+        //       ，遍历input类数组，判断checked 值为true 的元素 表示被选中
+        //         声明已给 checkArr = [] 因为多选  所以用数组 ，最后将用户选中内容 元素添加到数组中
+
+        var ipts = document.querySelectorAll('')
+
+        var checkArr = []  // 存放用户选中的元素 以及内容
+        for(var i = 0;i<ipts.length;i++){
+            if(ipts[i].checked){
+                checkArr.push({
+                    el:ipts[i],
+                    value:ipts[i].value
+                })
+            }
+        }
+        consoe.log(checkArr)
+    </script>
+</body>
+</html>

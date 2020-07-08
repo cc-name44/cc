@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>aaaaaaaaaaaaaaaaaa</h1>
+    <h1>bbbbbbbbbbbbbbbbbb</h1>
+    <h1>cccccccccccccccccc</h1>
+    <h1>dddddddddddddddddd</h1>
+    <h1>eeeeeeeeeeeeeeeeee</h1>
+
+    <script>
+        // var h1s = document.getElementsByTagName('h1');
+        // for(var i =0; i<h1s.length;i++){
+        //     h1s[i].onclick = function(){
+        //     // 坑 ：btn[i] 不存在  因为异步，这里程序比全局for还慢
+        //     // 所以全局的i = 5 
+        //         console.log(i,this)
+        //         this.style.color = 'blue'
+        //     }
+        // }
+        // console.log(i)
+
+        // 2.
+        // var h1s = document.getElementsByTagName('h1');
+        // for(var i =0; i<h1s.length;i++){
+        //     (function(){
+        //         var flag = true;
+        //         var x = i;//解决 变量污染 全局 i= 5的问题
+        //         h1s[i].onclick = function(){
+        //         flag ? (h1s[x].style.color = 'blue') : (h1s[x].style.color = 'black');
+        //         flag = !flag
+                
+        //     }
+        //     })()
+          
+        // }
+
+        // 3.给对象添加私有属性的方式
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" />
+      <input type="checkbox" />
+      <button>提交</button>
+
+      <select name="" id="">
+        <option value="china">中国</option>
+        <option value="Amican">美国</option>
+        <option value="bangzi" selected>韩国</option>
+      </select>
+    </form>
+
+    <script>
+      // form 的 类数组
+      var formObject = document.querySelector("form");
+      console.dir(formObject);
+      console.log(formObject[0]);
+      console.log(formObject[1].checked);
+      console.log(formObject[2]);
+      // 设置  或者 修改 checkbox 值
+      formObject[1].checked = true;
+      // 获取焦点
+      formObject[0].focus();
+
+      // 问题： select option  用户选择的是哪一个呢?
+
+      var select = formObject[formObject.length - 1];
+      console.log(select.nodeType, "=============");
+      for (var i = 0; i < select.length; i++) {
+        if (select[i].selected) {
+          console.log(select[i]);
+          console.log(select[i].value);
+        }
+      }
+
+      // 封装方法
+      // 作用；返回 select option 选择的内容
+      // 参数 ： select 类数组
+      function getSelectValue(select) {
+        // 错误优先原则
+        // 验证参数藏毒
+        if(arguments.length===0){
+          throw new Error('Failed to execute "getSeletValue" on "Element": 1 argument required, but only 0 present. ')
+        }
+        // 验证参数类型
+        if (select.nodeType !== 1) {
+          throw new Error('Failed to execute "getSeletValue" on "Element": is not element')
+        }
+        var res = null;
+        for (var i = 0; i < select.length; i++) {
+          if (select[i].selected) {
+            res = {
+              el: select[i],
+              value: select[i].value,
+            };
+          }
+        }
+        return res;
+      }
+      
+      select.size = '10'  // 改变select 的高度
+      console.log(getSelectValue(select))
+    </script>
+  </body>
+</html>
