@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .control {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="check">
+      <button class="color" value="black">黑色</button>
+      <button class="color" value="red">红色</button>
+      <button class="color" value="yellow">黄色</button>
+      <button class="color" value="blue">蓝色</button>
+      <button class="color" value="green">绿色</button>
+      <button class="color" value="orange">橙色</button>
+      <button class="color" value="purple">紫色</button>
+    </div>
+    <div class="control">
+      <button class="setColor">设置颜色</button>
+      <h1>我是问题</h1>
+    </div>
+
+    <script>
+      var color = document.querySelectorAll(".color");
+      var setColor = document.querySelector(".setColor");
+      var checkBtn = null;
+      for (var i = 0, len = color.length; i < len; i++) {
+        (function () {
+          var x = i;
+          color[i].onclick = function () {
+            checkBtn = color[x];
+            // 添加样式之气那 先清空所有的button 样式 回到初始化
+            for (var j = 0; j < color.length; j++) {
+              color[j].style = "";
+            }
+            color[x].style.backgroundColor = color[x].value;
+          };
+        })();
+      }
+
+      setColor.onclick = function () {
+        // 获取当前选中的哪一个buton
+        console.log(checkBtn);
+        var h1 = document.getElementsByTagName("h1")[0];
+        if (checkBtn === null) {
+          h1.style.color = "";
+          return;
+        }
+        // 根据选中的button 给h1 设置字体演示
+        h1.style.color = checkBtn.value;
+      };
+    </script>
+  </body>
+</html>
