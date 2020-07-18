@@ -1,0 +1,23 @@
+.home_top{
+    width: 1220px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.home_top div{
+    width: 110px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 20px;
+}
+.home_top div:hover{
+    background-color: purple;
+    color: white;
+}
+
+.wrap{
+    
+}
