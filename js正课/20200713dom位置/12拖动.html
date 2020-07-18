@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      var box = document.querySelector(".box");
+      //   box.onclick = function () {
+      //     console.log("点击了");
+      //     // 通过获取鼠标移动距离，将距离赋值给 元素的left top 属性；实现，元素的移动效果
+      //     document.onmousemove = function (e) {
+      //       console.log(e.clientX);
+      //       // 需求 让鼠标再【中间】
+      //       // 为什么减去 50
+      //       box.style.left = e.clientX - 50 + "px";
+      //       box.style.top = e.clientY - 50 + "px";
+      //       // 坑1：默认body 8px 导致鼠标不在元素上
+
+      //       // 坑2：再坐上交；
+      //     };
+      //   };
+
+      // 需求：再哪里点击的就开始再哪里拖动呢？
+      box.onclick = function (event) {
+        console.log("点击了");
+        var x = event.offsetX;
+        var y = event.offsetY;
+        // 通过获取鼠标移动距离，将距离赋值给 元素的left top 属性；实现，元素的移动效果
+        document.onmousemove = function (e) {
+          console.log(e.clientX);
+          // 需求 让鼠标再【中间】
+          // 为什么减去 50
+          box.style.left = e.clientX - x + "px";
+          box.style.top = e.clientY - y+ "px";
+          // 坑1：默认body 8px 导致鼠标不在元素上
+
+          // 坑2：再坐上交；
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /[^0-9]/g  // 除了0-9 其他都匹配
+        var str = 'dfjewir324324jfaioe===___===dfasf'
+        console.log(str.match(reg))
+        var reg2 = /[^a-zA-Z]/g 
+        var reg3 = /[^0-9a-zA-Z_]/g;
+        var str2 = '我是是一个中国人，我只爱中国2343fwerwqe_';
+        console.log(str2.match(reg3));
+    </script>
+</body>
+</html>

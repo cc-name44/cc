@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var reg = /[0123456789][abcdefghijklmnopqrestuvwxyz]/g
+        // 匹配2个字符；每个字符长度为1， 第一个字符0-9数字 第二个字符 a-z字符\
+        // 结果字符：  数字字母   长度为2
+        var reg1 = /[0-9][a-z]/g
+        var str = 'a1fjwqeirx6s6s5qw8wxs7s8w8ss6';
+        console.log(str.match(reg))
+    </script>
+</body>
+</html>

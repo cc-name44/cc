@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /[0-9]/g
+        var reg = /\d/g  // 匹配0-9字符
+        var reg = /[0-9a-zA-Z_]/g // 数字字母下划线
+        var reg = /[\w]/g     // 匹配数字字母下划线
+
+        var reg1 = /^\d[a-zA-Z]$/g  // 仅能匹配 字符长度为2开始是数字结尾是字母的
+        var str = '3d'
+        var str2 = '2djfqwoeruj3243fsrewor4234jfwqei4o3g'
+        console.log(str.match(reg1))
+        console.log(str2.match(reg1))
+
+        // 撇配 必须以为1开头；结尾无所谓 长度不限
+        var reg3 = /^[1][^\s]{1,}/g
+        var str3 = '1rowqeiur93333我'
+        var str4 = 'd1232dew'
+
+        console.log(str3.match(reg3));
+        console.log(str4.match(reg3));
+        
+        // 手机号码   仅开头为1 结尾是长度为1的字符 结果为11位数的数字
+        var reg5 =/^1\d{10}$/g // 开头 1 结尾数字；2个字符；第一个字符长度1 长第二个字符长度10；
+
+        var iphone= '133258963456895525'
+        console.log(iphone.match(reg5))
+        console.log('112345'.match(reg5))  // 因为第二个字符长度不满组
+
+        // 边界类
+        var str8 = '王宇航 是 河南人 他 是 不是 一个大学生';
+        var reg7 = /\B是\B/g;
+        console.log(str8.match(reg7));    
+
+         var str9 = 'this is  wangyuhang he is pingdingsan people';
+        var reg8 = /\bis\b/g;    // 单词界限；匹配 is
+        console.log(str9.match(reg8)) 
+     </script>
+</body>
+</html>
