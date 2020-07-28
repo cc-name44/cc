@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+            width: 500px;
+            margin: 10px auto;
+        }
+        li{
+            display: flex;
+            align-items: center;
+
+        }
+        .left{
+            width: 100px;
+            height: 100px;
+        }
+        .right{
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <!-- <li>
+            <div class="left">
+                <img src="" alt="">
+            </div>
+            <div class="right">
+                <span>ccccc</span>
+            </div>
+        </li> -->
+    </ul>
+    <script>
+
+        var list = document.querySelector('#list')
+        var url ='http://musicapi.leanapp.cn/artist/list'; //服务器地址
+        ajax('GET',url,function(data){
+            // console.log(data,'----------*****') // data 接收响应的数据
+            var data = JSON.parse(data);
+        console.log(data);
+        if(data.code == 200){
+            var{artists} = data;
+            var template = '';
+            for(var i = 0;i<artists.length;i++){
+                var{name,img1v1Url} = artists[i];
+                template += `<li>
+                    <div class='left'>
+                        <img src='${img1v1Url}' alt=''>
+                    </div>
+                    <div class='right'>
+                        <img src='${name}' alt=''>
+                    </div>
+                    </li> `;
+                list.innerHTML = template   
+            }
+        }
+        })
+      
+        function ajax(method,url,callback){
+            var res = {}
+            var xhr = new XMLHttpRequest()
+            xhr.open(method,url)
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                // 异步的  后执行
+                if(xhr.status == 200&&xhr.readyState==4){
+                    res = xhr.response
+                    console.log(res)
+                    callback(res) // 在请求成功后执行回调函数
+                }else{
+                    res = {
+                        error:'请求失败，出现问题'
+                    };
+                    callback(res)
+                }
+            }
+            // 先执行
+            // return res
+        }
+    </script>
+    <!-- <script>
+        var data = {
+            code:200,
+            more:true,
+            artList:[{}]
+
+        }
+
+        console.log(data)
+        var list = document.querySelector('#list');
+        window.onload = function(){
+            var { artList,code,more} = data
+            if(code == 200){
+                for(var i = 0;i<artList.length;i++){
+                    console.log(artList[i])
+                    var {img1v1Url,name} = artList[i];
+
+                }
+            }
+           
+        }
+
+    
+    </script> -->
+</body>
+</html>

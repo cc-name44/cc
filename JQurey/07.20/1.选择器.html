@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.0.js"></script>
+</head>
+<body>
+    <div class="wrap"></div>
+    <div id="box"></div>
+    <script>
+        var wrap = $('.wrap')
+        console.log(wrap);
+        var box = $('#box') // jquery 对象
+
+
+        // 将jquery 对象变为DOM对象---> 目的：使用DOM下api
+        box = box[0]
+        console.log(box) // dom对象
+
+        // 如何将dom 变为jquery对象
+        var res = $(box) // jq对象
+        console.log(res)
+
+
+        
+
+        // $() 作用1：选中html元素 返回jq对象  2.将dom 对象变为jq对象
+        // 参数：【css选择器】 或者dom 对象
+    </script>
+</body>
+</html>

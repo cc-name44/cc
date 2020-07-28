@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <link rel="stylesheet" href="../css/coffee.css">
+</head>
+<body>
+    <button class="return"><span><&nbsp;&nbsp;&nbsp;</span><span>返回</span></button>
+
+    <div class="bigImg">
+        <!-- <div class="img_left">
+          
+            <div class="mark"></div>
+            
+        </div>
+        
+        <div class="imgView">
+        
+        </div>
+        <div class="right">
+          <h2>手冲咖啡6杯装(定制款)</h2>
+          <p>星巴克咖啡产地制造商直供</p>
+          <p class="price">￥59</p>
+          <div class="star">
+              <span><img src="../img/star0.png" alt=""></span>
+              <span><img src="../img/star0.png" alt=""></span>
+              <span><img src="../img/star0.png" alt=""></span>
+              <span><img src="../img/star0.png" alt=""></span>
+              <span><img src="../img/star1.png" alt=""></span>
+              <span>3.7</span>
+          </div>
+        <button class="shopCar">添加购物车</button>
+      </div>
+      <div class="botton"></div> -->
+    </div>
+       
+
+      <div class="same">
+        <!-- <h4>相似商品推荐</h4>
+        <ul></ul> -->
+      </div>
+
+    <script>
+      // 返回按钮
+      $('.return').on('click',function(){
+        history.go(-1)
+        var indexuline1 = window.parent.uline1
+        $(indexuline1).css({
+                    color:'purple',
+                    borderBottom:'2px solid purple'
+                })
+        var homeDiv = window.parent.homeDiv
+        $(homeDiv).css({
+                    display:'block'
+                })
+      })
+      // 详情页面动态渲染
+
+       var str = JSON.parse(sessionStorage.getItem('goodId'))
+                var res = ''
+                for(var x in str){
+                    var {img_list_url,mack,price,title, Id,imgs,supplier,price,type_one} = str[x]
+                   
+                    res+=` 
+                            <div class="img_left">
+                            <div class="mark"></div>
+                            </div>
+                        
+                            <div class="imgView">
+                            </div>
+                      <div class="right">
+                          <h2>${title}</h2>
+                          <p>${supplier}</p>
+                          <p class="price">￥${price}</p>
+                          <div class="star">
+                              <span><img src="../img/star0.png" alt=""></span>
+                              <span><img src="../img/star0.png" alt=""></span>
+                              <span><img src="../img/star0.png" alt=""></span>
+                              <span><img src="../img/star0.png" alt=""></span>
+                              <span><img src="../img/star1.png" alt=""></span>
+                              <span>3.7</span>
+                          </div>
+                        <button class="shopCar">添加购物车</button>
+                      </div>
+                      <div class="botton"> 
+
+                      </div>
+                      `
+                      // url:''
+                      var bigImg = document.querySelector('.bigImg')
+                      // 在页面中添加图片
+                    bigImg.innerHTML = res
+                    var img_left = document.querySelector('.img_left')
+                    var imgView = document.querySelector('.imgView')
+                    var botton = document.querySelector('.botton')
+                    imgs = JSON.parse(imgs)
+                    var imgsa = document.createElement('img')
+                    // 
+                    for(var i = 0;i<imgs.length;i++){
+                      console.log(imgs[i])
+                      imgsa.src = imgs[i]
+                      img_left.appendChild(imgsa),
+                      imgsa = document.createElement('img')
+                      
+                    }
+                    for(var i = 0;i<imgs.length;i++){
+                      console.log(imgs[i])
+                      imgsa.src = imgs[i]
+                      imgView.appendChild(imgsa),
+                      imgsa = document.createElement('img')
+                      
+                    }
+                    for(var i = 0;i<imgs.length;i++){
+                      console.log(imgs[i])
+                      imgsa.src = imgs[i]
+                      botton.appendChild(imgsa)
+                      imgsa = document.createElement('img')
+                      
+                    }
+
+                    //  相似商品推荐
+                    var url_type_one = 'http://vebcoder.cn:9527/api/goodList'
+                    url_type_one += `?type_one=${type_one}`
+                    var same = document.querySelector('.same')
+                    setTimeout(function(){
+                    $.ajax({
+                        url: url_type_one,
+                        method:'get',
+                        data: {},
+                        dataType: "JSON",
+                        success: function (data) {
+                            console.log(url_type_one);
+                            console.log(data)
+                            var ul = document.createElement('ul');
+                            ul.className = 'open_flex all_products'
+                            for (var x = 0; x < 11; x++) {  //
+                                var list_item = `
+                                    <a href="" value="${data[x].Id}">
+                                    <img src="${data[x].img_list_url}" alt="">
+                                    <h3 class="title">${data[x].title}</h3>
+                                   
+                                    <p class="same_botton">
+                                    <span class="price">￥$${data[x].price}</span>
+                                    <span class="label">${data[x].mack}</span></p>
+                                    </a>
+                                `
+                                var txt = document.createElement('li');
+                                txt.innerHTML = list_item;
+                                txt.className = 'item';
+                                // 走两遍  x = 5 x = 10
+                                if (x % 5 == 0 && x > 0) {  
+                                    console.log('添加了一次')
+                                    same.appendChild(ul);
+                                    ul = document.createElement('ul');
+                                    ul.className = 'open_flex all_products'
+                                    ul.innerHTML = '';
+                                }
+                                ul.appendChild(txt);
+                            }
+                        },
+                        error:function(err){
+                            console.log(url_type_one)
+                            console.log(err)
+                        }
+                    })
+                },200)
+                                    
+                }
+                
+
+      //tab切换
+      $(window).ready(function () {
+        var x = 0;
+        $(".img_left>img:eq(" + x + ")").css({ display: "block" });
+        $(`.botton>img:eq(${x})`).css({ opacity: 1 });
+        $(".botton>img").on("click", function () {
+          $(".img_left>img:eq(" + x + ")").css({ display: "none" });
+          $(`.botton>img:eq(${x})`).css({ opacity: 0.6 });
+          $(".imgView>img:eq(" + x + ")").css({
+            display: "none",
+          });
+        x = $(this).index();
+          $(".img_left>img:eq(" + x + ")").css({ display: "block" });
+          $(`.botton>img:eq(${x})`).css({ opacity: 1 });
+        })
+
+            // 鼠标移入移出，mark 和 放大图的显示隐藏
+            $(".mark").css({display: "none",});
+        $(".bigImg>.img_left").on("mouseover", function () {
+        $(".mark").css({ display: "block",});
+          $(".imgView").css({display: "block",});
+          $(".imgView>img:eq(" + x + ")").css({display: "block",});
+        });
+        $(".bigImg>.img_left").on("mouseleave", function () {
+          $(".mark").css({display: "none",});
+          $(".imgView").css({display: "none",});
+        });
+
+        $(".bigImg").on("mousemove", function (e) {
+
+        var moveX = e.pageX - $(this).offset().left - $(".mark").width()/2;
+        var moveY = e.pageY - $(this).offset().top - $(".mark").height()/2;
+        $(".mark").css({
+            left: moveX + "px",
+            top: moveY + "px",
+          });
+
+          // 放大图移动
+          var imgViewX = 2 * moveX;
+          var imgViewY = 2 * moveY;
+          $('.imgView>img').css({
+            right: imgViewX + "px",
+            bottom: imgViewY + "px",
+          });
+
+          // 左移
+          if (moveX < 0) {
+            moveX = 0
+            $(".mark").css({
+              left: moveX + "px",
+            });
+            
+          }
+          // 上移
+          if (moveY < 0) {
+            moveY = 0;
+            $(".mark").css({
+              top: moveY + "px",
+            });
+          }
+          // 右移
+          var maxX = $('.img_left').width() - $(".mark").width();
+          if (moveX > maxX) {
+            moveX = maxX;
+            $(".mark").css({
+              left: moveX + "px",
+            });
+          }
+          // 下移
+          var maxY = $('.img_left').height() - $(".mark").height();
+          if (moveY > maxY) {
+            moveY = maxY;
+            $(".mark").css({
+              top: moveY + "px",
+            });
+          }
+        })
+       })
+ 
+
+     
+
+
+    </script>
+</body>
+</html>

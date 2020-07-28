@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        // ie 9以下
+
+        // 2.阻止默认行为
+        // function preventDefault(e){
+        //     var event = e || window.event;
+        //     if(e.preventDefault){
+
+        //     }
+        // }
+
+        // 3.阻止事件冒泡
+        // function stopPropergation(e){
+        //     var event = e || window.event;
+
+        // }
+
+
+        // js 如何解决兼容性问题 距离
+
+        // 4. 事件监听的封装
+        function eventListener(el,evevt,callback,type){
+            if(el.addEventListener){
+
+            }
+        }
+
+        // 删除事件句柄的兼容性处理
+    </script>
+</body>
+</html>

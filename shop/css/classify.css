@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #424242;
+}
+h2{
+    text-align: center;
+    font-size: 24px;
+}
+h3{
+    width: 220px;
+    height: 21px;
+}
+.typetwo ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.typetwo ul{
+    width: 1200px;
+    margin:0 auto;
+}
+.typetwo ul li {
+    width: 230px;
+    height: 301px;
+    margin: 5px;
+    padding: 5px;
+}
+.typetwo ul li img{
+    width: 220px;
+    height: 220px;
+}
+.title{
+    color: #424242;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+.botton {
+    display: flex;
+    justify-content: space-between;
+}
+.botton .price{
+    color: #ff4500;
+    font-weight: bolder;
+}
+
+

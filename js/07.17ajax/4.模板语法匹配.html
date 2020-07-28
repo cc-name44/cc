@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{msg}}</h1>
+    <div>{{name}}</div>
+    <script>
+        var data = {
+            msg:'aaaa',
+            name:'ccccc'
+        }
+
+        var h1 = document.querySelector('h1');
+        var div = document.querySelector('div');
+        var h1val = h1.innerHTML;
+        var divval = div.innerHTML;
+
+        // function replaceVal(el){
+        //     var str = el.innerHTML;
+        //     el.innerHTML = str.replace(/\{\{(\w+)\}\}/,function(a,b,c){
+        //         for(var x in data){
+        //             if(x === RegExp.$1){
+        //                 return data[x]
+        //             }
+        //         }
+        //     })
+        // }
+        // replaceVal(h1)
+        // replaceVal(div)
+
+        function replace(){
+            var template = document.body.innerHTML;
+            console.log(template)
+            var res = template.replace(/\{\{(\w+)\}\}/g,function(a,b,g){
+                console.log(a);
+                var reg = /\w+/; 
+                var newVal = a.match(reg)[0];
+                console.log(a.match(reg)[0]);
+
+            })
+        }
+    </script>
+</body>
+</html>

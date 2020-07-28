@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.0.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+    <div class="box"></div>
+    <script>
+        // html.append(str/dom)  作用：把str插入到html中
+        $('.wrap').append('<p>我是添加内容</p>')
+
+        // 新闻滚动效果
+        $('wrap').appendTo($('.box')) // 修改原来的html结构
+
+        // html.append(dom)  把html 插入到dom中
+        //  $('wrap').appendTo($('.box'))
+
+        // 动画
+        // animate() 自定义动画
+        // 参数一：执行动css属性
+        // 参数二：动画执行时间
+        // 参数三：回调函数；动画执行完毕后再执行
+        $('.box').animate({
+            opacity:0
+        },2000,function(){
+            alert('动画执行完毕')
+        })
+
+        // 添加兄弟元素
+        // 给wrap插入上一个新建新建兄弟元素div
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+  </head>
+  <body>
+    <button>请求</button>
+    <script>
+      $("button").on("click", function () {
+        console.log("1");
+        var obj = {
+          // 请求参数
+          userName: "aaa111",
+          password: "12345678",
+        };
+        var params = JSON.stringify(obj);
+        $.ajax({
+          url: "http://vebcoder.cn:9527/api/login", // 接口地址
+          method: "get", // 请求方式
+          data: params,
+          dataType: "json", // 设置响应数据的数据格式 为 json 对象
+          success: function (data) {
+              // loading 消失
+            // 服务给客户端响应饿了；
+            // 请求成功 ---> 注册成功
+            if (data.code == 1) {
+              console.log("注册成功");
+            }
+            // 请求失败 ----> 注册失败；用户已经存在
+            if (data.code == 0) {
+              console.log("用户已经存在");
+              // 这里登陆事变；服务端问题；找后端开发人员解决；
+              var openID = {
+                  userId:'9527',
+                  token:'hfri3y589hkfdhi375934utre59=e082-3483r0o9ye',// 只有token 才能白表示登陆成功
+                  userName:'aaa111'
+              }
+              openID = JSON.stringify(openID)
+              // 把假数据；存到 localStorage 中 
+              localStorage.setItem('oppenID',openID);
+              // 跳转到首页
+            }
+            console.log(data);
+            console.log("2");
+          },
+          error: function (err) {
+            // 服务器没有给前端响应；系统错误
+            console.log("系统错误", "你好啊", err);
+          },
+        });
+
+        console.log("3");
+      });
+    </script>
+  </body>
+</html>

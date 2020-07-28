@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../07.20/jquery-3.5.0.js"></script>
+</head>
+<body>
+  <p>子页面</p>
+  <input type="text" name="" id="username">
+  <button>子窗口点击</button>
+  <script>
+    //   将子窗口的username传递到父窗口中
+    // 1.获取本地窗口数据
+    // 2.获取父窗口，并对父窗口中属性赋值
+    $('button').on('click',function(e){
+        e.preventDefault();
+        var username = $('#username').val()
+        var parentWindow = window.parent;
+        parentWindow.username = username
+    })
+  </script>
+</body>
+</html>

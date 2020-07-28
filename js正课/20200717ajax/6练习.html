@@ -48,6 +48,19 @@
 
       var list = document.querySelector("#list");
       var url = "http://localhost:3000"; // 服务器地址=
+      var option = {
+        page:1,
+        num:1000,
+      }
+
+      // http://localhost:3000?page=1&num=1000;
+      url = url+"?"
+      for(var x in option){
+        url += x +'='+option[x]+'&'
+      }
+      url = url.slice(0,url.length-1);
+
+      console.log(url)
       ajax("GET", url, function (data) {
         // console.log(data,'----------')  // data 接收响应的数据
         var data = JSON.parse(data);

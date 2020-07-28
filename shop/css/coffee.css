@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.return{
+    width: 89px;
+    height: 40px;
+    background-color: #FFFFFF;
+    margin-left: 200px;
+    margin-top: 20px;
+    border: 1px solid #dcdfe6;
+}
+.bigImg{
+    width: 1000px;
+    height: 480px;
+    margin: 0 auto;
+    display: flex;
+}
+.bigImg .img_left{
+    width: 400px;
+    height: 400px;
+    position: relative;
+  
+
+}
+.bigImg .img_left img{
+    width: 400px;
+    height: 400px;
+    display: none;
+
+}
+.bigImg .img_left .mark{
+    width: 250px;
+    height: 250px;
+    background-color: grey;
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bigImg .imgView{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    
+}
+.bigImg .imgView img{
+    width: 800px;
+    height: 800px;
+    position: relative;
+    display: none;
+    z-index: 999;
+    
+
+}
+
+.right{
+    position: absolute;
+    right: 200px;
+    top: 50px;
+    
+    height: 203px;
+    width: 250px;
+    /* background-color: #ccc; */
+    margin: 100px 0 0 180px;
+}
+.right p{
+    margin: 20px 0;
+}
+.price{
+    color: red;
+}
+.star{
+    display: flex;
+}
+.star img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.shopCar{
+    background-color: #f56c6c;
+    border-radius: 4px;
+    border: 1px solid #f56c6c;
+    color: #fff;
+    width: 126px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.img-btn{
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+.img-btn img{
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+}
+
+.botton{
+    position: absolute;
+    left: 100px;
+    top: 500px;
+
+}
+.botton img{
+    widows: 80px; ;
+    height: 80px;
+    opacity: 0.6;
+}
+/* 相似商品 */
+
+.same{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 542px;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.same ul{
+    display: flex;
+}
+.same a{
+    text-decoration: none;
+    color: black;
+}
+.same li{
+    width: 180px;
+    height: 251px;
+    padding: 10px;
+    list-style: none;
+  }
+
+.same img{
+    width: 180px;
+    height: 180px;
+}
+.same .title{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.same .same_botton{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700; 
+}
+.same .price{
+    color: #FF4500;
+}
+.same  .title{
+    width: 180px;
+    height: 21px;
+    color: #424242;
+    
+}
+
+/* <li data-one=${Id}><a href='javascript:;'>
+<img src='${img_list_url}'alt="">
+<p class=".goods_title">${title}</p>
+<p class="goods_botton">
+<span class="price">￥${price}</span>
+<span class="label">${mack}</span></p>
+</a></li> */
+/* .goods{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+  }
+.coffee{
+    text-align: center;
+}
+.goods img{
+    width: 220px;
+    height: 220px;
+}
+.goods .goods_botton{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700; 
+}
+.goods .price{
+    color: #FF4500;
+}
+.goods  title{
+    width: 44px;
+    height: 25px;
+    background-color: #AB7FD1;
+    color: white;
+} */

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"> </script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+    <div class="box"></div>
+    <script>
+        // html.append(str/dom)  作用 把str/dom插入到html中
+        $('.wrap').append('<p>我是添加内容</p>')
+
+        // 新闻效果
+        $('.wrap').append($('.box'))  // 修改原来的html 结构
+        $('.wrap').prepend('<h1>从第一个子元素开始天啊及</h1>')
+        // html.append(dom) 把 html 插入到 dom中；
+        // $('.wrap').appendTo($('.box'))
+
+        // 动画
+        // animate() 自定一动画；
+        // 参一： 执行动画的css 属性
+        // 参二：动画执行事件
+        // 参三：回调函数；动画执行完毕后再执行
+        $('.box').animate({
+            opacity:0
+        },2000,function(){
+            alert('动画执行完毕，执行完毕')
+        })
+
+        // 添加兄弟元素
+        // 给 wrap 插入上一个新建兄弟元素div
+        $('.wrap').before('<div class="one"></div>')
+        // 给wrap 插入下一个新建兄弟元素div
+        $('.wrap').after('<div class="two"></div>')
+
+    </script>
+</body>
+</html>

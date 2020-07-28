@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+</head>
+<body>
+    <button>点击</button>
+    <iframe src="./a.html" frameborder="0" id="ifm"></iframe>
+
+    <script>
+        var a = '11'
+        // 点击按钮获取a.html 中p 
+        $('button').on('click',function(){
+            // 0 通过live Serve 服务 打开页面；而不是本地打开
+            // 1 获取ifm 的窗口独享
+            var res = $('#ifm')[0].contentWindow;
+            // 2 获取dom对象 
+            var p = res.document.querySelector('p')
+            console.log($(p).css({color:'red'}))
+     })
+    </script>
+    <script>
+        // 1:iframe contentWindow
+        // 父窗口 子窗口 
+        // 1：如何再父窗口获取子窗口页面中dom 元素
+
+        // 2：如何将数据从子窗口传递到父窗口 （子传父）
+
+ 
+        // 3：如何将父窗口数据传递给子窗口   （父传子）
+    </script>
+    
+</body>
+</html>

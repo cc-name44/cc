@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>aaaaaaaa</div>
+    <script>
+        function $(str){
+            return new cc(str)
+        }
+        function $(option){
+            return new cc(option)
+        }
+        function cc(el){
+            this.el = document.querySelector(el);
+        }
+
+        cc.prototype = {
+            html:function(str){
+                console.log(this)
+                console.log(this.el)
+                this.el.innerHTML = str
+                return this
+            },
+            css:function(option){
+               for(var x in option){
+                    this.el.style[x] = option[x]
+                }
+                return this
+            }
+        }
+
+        $('div').html('cccccccc').css({
+            color:'red'
+        })
+
+    </script>
+</body>
+</html>

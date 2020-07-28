@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 500px;
+            height: 300px;
+            position: relative;
+            margin: 10px auto;
+        }
+        .wrap img{
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            display: none;
+        }
+        .show{
+            display: block !important;
+        }
+        /* .control-btn{
+            width: 30px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            line-height: 70px;
+            position: absolute;
+            z-index: 100;
+            left: 0px;
+            top: 50%;
+            transform: translate(0px,-50%);
+        } */
+        #pre {
+            width: 30px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: center;
+            line-height: 70px;
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            top: 50%;
+            transform: translate(0px, -50%);
+        }
+
+        #next {
+            width: 30px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: center;
+            line-height: 70px;
+            position: absolute;
+            z-index: 10;
+            right: 0;
+            top: 50%;
+            transform: translate(0px, -50%);
+        }
+        .left{
+            left: 0px;
+
+        }
+        .right{
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="./img/1.jpg" alt="" class="show">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <div id="pre" class="control-btn left">< </div>
+        <div id="next" class="control-btn right">></div>
+    </div>
+
+    <script>
+        // 初始化：页面只是显示一个图片
+        // 通过.show 类名方式控制哪一个图片显示
+
+        var pre = document.querySelector('#pre');
+        var next = document.querySelector('#next');
+        var imgs = document.querySelectorAll('.wrap>img');
+        console.log(imgs)
+        var index = 0;
+
+        pre.addEventListener('click',function(){
+            for(var i = 0;i<imgs.length;i++){
+                imgs[i].className = ''
+            }
+
+            --index
+            if(index<0){
+                index = imgs.length - 1;
+            }
+            imgs[index].className = 'show'
+        })
+
+        next.addEventListener('click',function(){
+
+            // imgs[0].className = '';
+            // imgs[1].className = '';
+            // imgs[2].className = '';
+            for(var i = 0;i<imgs.length;i++){
+                imgs[i].className = ''
+            }
+
+            ++index
+            if(index>2){
+                index = 0;
+            }
+            imgs[index].className = 'show'
+        })
+
+    </script>
+</body>
+</html>

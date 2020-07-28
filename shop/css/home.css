@@ -1,23 +1,94 @@
-.home_top{
-    width: 1220px;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.wraper{
+    width: 1200px;
+    height: 500px;
     margin: 0 auto;
-    overflow: hidden;
-}
-.home_top div{
-    width: 110px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 20px;
-}
-.home_top div:hover{
-    background-color: purple;
-    color: white;
 }
 
 .wrap{
+    width: 1200px;
+    height: 500px;
+    /* display: inline-block; */
+    margin: 0 auto;
+    display:flex;
+    overflow: hidden;
+   
+}
+.wrap img{
+    width: 100%;
+    height: 500px;
+    flex-shrink:0;
+}
+.control{
     
 }
+.control .pre{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    font-size: 100px;
+    opacity: 0.3;
+    
+}
+.control .next{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 1172px;
+    font-size: 100px;
+    opacity: 0.3;
+    
+}
+
+
+/* 商品部分 */
+.goods{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+  }
+.coffee{
+    text-align: center;
+}
+.goods img{
+    width: 220px;
+    height: 220px;
+}
+.goods .goods_botton{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700; 
+}
+.goods .price{
+    color: #FF4500;
+}
+.goods  title{
+    width: 44px;
+    height: 25px;
+    background-color: #AB7FD1;
+    color: white;
+}
+/* ::-webkit-scrollbar{
+    display: none;
+} */
+
+

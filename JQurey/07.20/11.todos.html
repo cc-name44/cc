@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.0.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <div class="content">
+        <p>内容</p>
+    </div>
+    <script>
+        // $('p').on('click',function(){
+        //     $(this).fadeOut(500,function(){
+        //         $(this).remove()
+        //     })
+        // })
+        $('input[type = text]').on('keydown',function(e){
+            console.log(e.keyCode)
+            if(e.keyCode == 13){
+                // val()  获取input 的val值
+                // 没参数获取  有参数就设置
+               var val = $('input[type = text]').val();
+               var p = `<p>${val}</p>`;
+               p = $(p).css({
+                   display:'none'
+               });
+
+                var res=$('.content').append(p)
+                $(p).fadeIn(500)
+                $('input[type = text]').val('')
+               
+            //  
+                $(p).on('click',function(){
+                    $(this).fadeOut(500,function(){
+                        $(this).remove()
+                         })
+                    })
+            }
+        })
+    </script>
+</body>
+</html>

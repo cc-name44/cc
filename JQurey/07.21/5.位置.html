@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <style>
+        .wrap{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 300px;
+            left: 200px;
+        }
+        .box{
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+    <div class="box"></div>
+    <script>
+        $(window).ready(function(){
+            for(var i = 0;i<100;i++){
+                $('body').append('<p>内容</p>')
+            }
+            $(document).on('scroll',function(){
+                // console.log('滚动')
+                var top = $(document).scrollTop();
+                console.log(top)
+            })
+        });
+
+        // 获取元素位置的偏移量
+        var obj =$('.wrap').offset()
+        console.log(obj);
+        // position() 元素相对父元素偏移量
+        var position = $('.box').position()
+        console.log(position)
+        // offset() 元素相对窗口偏移量，就是position  left 的值
+        console.log($('.box').offset())
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@
 </head>
 <body>
     <button>清空</button>
+    <button class="btn">删除age</button>
     <script>
         // var query = location.search;
         // query = query.replace('?','');
@@ -19,6 +20,11 @@
         document.querySelector('button').onclick = function(){
             // clear() 作用清空sessionStorage中所有数据
             sessionStorage.clear()
+        }
+
+        document.querySelector('.btn').onclick = function(){
+            // removeItem() 删除sessionStorage 中某一个字段
+            sessionStorage.removeItem('password')
         }
     </script>
 </body>

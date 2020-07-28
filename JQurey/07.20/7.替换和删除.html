@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.0.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box">替换元素</div>
+        <p>删除元素</p>
+    </div>
+    <div class="wraper">
+        <p>aaaaaa</p>
+        <a href="#">bbbbb</a>
+    </div>
+    <script>
+        // 替换 a.replaceWith(b)
+        // 吧a替换为b
+        $('.box').replaceWith('<h1>aaaaaa</h1>')
+        // 删除  a.empty() //删除a的所有子节点
+        // 作用：用于清空所有标签
+        $('.wraper').empty()
+        // 删除p
+        $('.wrap>p').remove()
+    </script>
+</body>
+</html>

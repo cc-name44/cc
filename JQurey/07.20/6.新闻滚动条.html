@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #ccc;
+            text-align: left;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            padding-left: 20px;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+    <script>
+        var news = [
+            'aaaaaa',
+            'bbbbbbbb',
+            'ccccccc',
+            'dddddddd',
+            'eeeeeeee'
+        ];
+        news.forEach(function(item){
+            $('.wrap').append(`<p>${item}</p>`)
+        })
+        // console.log($('p:last'))
+
+        setInterval(function(){
+            $('p:first').animate({
+                marginTop:'-50px',
+            },
+            900,
+            function(){ 
+                $('.wrap').append($('p:first'))
+                $('p').css({
+                    marginTop:'0'
+                })
+            },
+          
+            )
+        },1000)
+    </script>
+</body>
+</html>

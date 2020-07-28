@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .glass{
+            width: 600px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+        .bgImage{
+            width: 470px;
+            height: 250px;
+        }
+        .bgImage img{
+            width: 470px;
+            height: 250px;
+            display: none;
+        }
+        .glassView{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            right: -200px;
+            top: 0;
+            overflow: hidden;
+            border: 1px solid red;
+            display: none;
+        }
+        .glassView img{
+            
+        }
+        .smImage{
+            display: flex;
+            justify-content: space-between;
+        }
+        .smImage img{
+            width: 100px;
+            height: 60px;
+            margin: 20px 10px;
+          
+        }
+        .mark{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0.5;
+            position: relative;
+            /* left: 0;
+            top: 0; */
+        }
+    </style>
+</head>
+<body>
+    <div class="glass">
+        <!-- 放大镜图片 -->
+        <div class="glassView">
+            <img src="./img/1.jpg" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.jpg" alt="">
+        </div>
+        <!-- 大图 -->
+        <div class="bgImage">
+            <img src="./img/1.jpg" class="active" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.jpg" alt="">
+            <div class="mark"></div>
+        </div>
+        <!-- 缩略图 -->
+        <div class="smImage">
+            <img src="./img/1.jpg" alt="">
+            <img src="./img/2.jpg" alt="">
+            <img src="./img/3.jpg" alt="">
+            <img src="./img/4.jpg" alt="">
+        </div>
+
+    </div>
+
+    <script>
+        // 第一步：css 初始化样式，全部为不被选中状态
+
+        // 第二步：【在css 基础上】处理浏览器加载的样式 
+        $(window).ready(function(){
+            var x =0;
+            $('.bgImage>img:eq('+x+')').css({display:'block'});
+            $(`.smImage>img:eq(${x})`).css({opacity:1})
+            // 鼠标移入
+            $('.smImage>img').on('mouseover',function(){
+                $(`.bgImage>img:eq(${x})`).css({display:'none',});
+                $(`.smImage>img:eq(${x})`).css({opacity:0.6})
+
+                x = $(this).index();
+
+                $(`.bgImage>img:eq(${x})`).css({display:'block',});
+                $(`.smImage>img:eq(${x})`).css({opacity:1})
+            })
+
+            // mark显示隐藏
+            // 初始化
+            $('.mark').css({display:'none'})
+            // 移入
+            $( `.bgImage`).on('mouseover',function(){
+                $('.bgImage>.mark').css({display:'block'})
+            })
+            // 移出
+            $( `.bgImage`).on('mouseleave',function(){
+                $('.bgImage>.mark').css({display:'none'})
+            })
+
+            // 拖拽功能
+            $(".bgImage").on("mousemove", function (e) {
+            var markX = e.offsetX-$(this).offset().left-$('.mark').width()/2;
+            var markY = e.offsetY-$(this).offset().left-$('.mark').width()/2;
+            $(".mark").css({ left: markX, top: markY });
+          });
+
+            // 放大镜
+
+
+        })
+        
+
+    </script>
+</body>
+</html>

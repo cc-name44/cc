@@ -6,15 +6,19 @@
     <title>商城首页</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/font_monp1urys9l/iconfont.css">
+    <script src="./jquery.js"></script>
 </head>
 <body> 
     <nav class="nav">
         <div class="nav_left">
             <img src="./img/logo.png" alt="">
             <div class="option">
-                <a href="./view/home.html" target="content"><div class="home">首页</div></a>
-                <a href="./view/login.html" target="content"><div class="login">登录</div></a>
-                <a href="./view/resgiter.html" target="content"><div class="resgiter">注册</div></a>
+                <a id="uline" class="uline1"  href="./view/home.html" target="content"><div class="home">首页</div></a>
+                <a id="uline" class="uline2 logining" href="./view/login.html" target="content"><div class="login">登录</div></a>
+                <a id="uline" class="uline3 logining" href="./view/resgiter.html" target="content"><div class="resgiter">注册</div></a>
+                <a id="uline" class="uline4 logined" href="./view/shoppingcar.html" target="content"><div class="login">购物车</div></a>
+                <a id="uline" class="uline5 logined return" href="./view/home.html" target="content"><div class="resgiter">退出登录</div></a>
+
             </div>
 
         </div>
@@ -22,14 +26,30 @@
             <input type="text" placeholder="请输入想要的商品">
             <div class="search"><i class="iconfont icon-fangdajing"></i>搜索</div>
         </div>
+
+        
     </nav>
-    <iframe src="./view/home.html" class="iframe" name="content"></iframe>
+    <ul class="home_top">
+        <li><a href="./view/classify.html" target="content"><div>咖啡</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>饮食</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>正餐</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>男装</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>女装</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>眼镜</div></a></li>
+        <li><a href="./view/classify.html" target="content"><div>鞋靴</div></a></li>
+        
+    </ul>
+    <div class="top">
+        返回
+        顶部
+    </div>
+   
+    <iframe id="content" src="./view/home.html" class="iframe" frameborder ='0' name="content" scrolling="no"></iframe>
  
 
-   
     
     
-   
-    <!-- 公共部分 -->
+   <script src="./js/common.js"></script>
 </body>
+<script src="./iframe.js"></script>
 </html>

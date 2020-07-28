@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+    <input type="checkbox" value="1">a
+    <input type="checkbox" value="2">b
+    <input type="checkbox" value="3">c
+    <input type="checkbox" value="4">d
+    <input type="checkbox" value="5">e
+    <button>点击</button>
+
+    <script>
+        // 如何获取 用户勾选的内容
+      
+      $('button').on('click',function(){
+        var checkArr = []  // 空数组 用来存放所有选中的值
+        // 获取被勾选的元素
+          $('input:checked').each(function(index,item){
+              console.log(item)
+              console.log(item.value)
+              checkArr.push(item.value)
+          })
+          console.log($('input:checked'),checkArr)
+      })
+    </script>
+</body>
+</html>
